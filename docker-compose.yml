@@ -10,14 +10,14 @@ services:
     - ${APP_PORT:-8888}:80
     volumes:
     - .:/var/www/html
-    environment: 
+    environment:
       DB_CONNECTION: pgsql
       DB_HOST: db
       DB_PORT: ${DB_PORT:-5432}
       DB_DATABASE: laravel
       DB_USERNAME: laravel
       DB_PASSWORD: secret
-        
+
   db:
     image: postgres:13-alpine
     environment:
@@ -28,3 +28,4 @@ services:
     - ${DB_PORT:-5432}:5432
   redis:
     image: redis:6-alpine
+
