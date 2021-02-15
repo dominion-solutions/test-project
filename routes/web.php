@@ -17,4 +17,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::webhooks('webhook-receiving');
