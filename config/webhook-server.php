@@ -10,7 +10,7 @@ return [
     /*
      * The default http verb to use.
      */
-    'http_verb' => 'push',
+    'http_verb' => 'post',
 
     /*
      * This class is responsible for calculating the signature that will be added to
