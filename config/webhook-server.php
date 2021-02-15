@@ -22,7 +22,7 @@ return [
     /*
      * This is the name of the header where the signature will be added.
      */
-    'signature_header_name' => 'Signature',
+    'signature_header_name' => 'X-Hub-Signature-256',
 
     /*
      * These are the headers that will be added to all webhook requests.
