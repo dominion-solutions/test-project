@@ -1,0 +1,35 @@
+version: "3.3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    depends_on:
+      - db
+    ports:
+    - ${APP_PORT:-8888}:80
+    volumes:
+    - .:/var/www/html
+    environment:
+      DB_CONNECTION: pgsql
+      DB_HOST: db
+      DB_PORT: ${DB_PORT:-5432}
+      DB_DATABASE: laravel
+      DB_USERNAME: laravel
+      DB_PASSWORD: secret
+
+  db:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: laravel
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: laravel
+    ports:
+    - ${DB_PORT:-5432}:5432
+  redis:
+    image: redis:6-alpine
+
+
+
+
+
